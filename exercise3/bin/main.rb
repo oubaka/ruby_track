@@ -1,5 +1,5 @@
-require_relative '../lib/task.rb'
+require_relative '../lib/fibonacci.rb'
 
 # Fibonacci
-task = Task.new
-task.fib(1000) {|x| print "#{x}," }
+fib = Fibonacci.new
+fib.get(1000) {|x| print "#{x}," }

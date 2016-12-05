@@ -9,20 +9,32 @@ class Customer
     @balance = 1000.to_f
   end
 
+  def acceptable_amount?(amount)
+    true if Float(amount) rescue false
+  end
+
   def deposit(amount)
-    begin
-      @balance += amount.to_f
-    rescue => exception
-      puts exception
+    if not acceptable_amount?(amount)
+      raise ArgumentError, 'Amount not allowed', caller
+      return
+    end
+    if amount.to_f > 0 
+      @balance += amount.to_f 
+    else
+      raise ArgumentError, 'Amount too low', caller
     end
   end
 
   def withdraw(amount)
-    begin
-      @balance -= amount.to_f
-    rescue => exception
-      puts exception
+    if not acceptable_amount?(amount)
+      raise ArgumentError, 'Amount not allowed', caller
+      return
     end
+    if (@balance - amount.to_f) > 0
+      @balance -= amount.to_f 
+    else
+      raise ArgumentError, 'Withdraw limit exceeded', caller
+    end    
   end
 
   def to_s

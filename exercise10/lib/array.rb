@@ -1,5 +1,5 @@
 class Array
-  def hash
+  def get_hash
     result = Hash.new {|h,k| h[k] = [] }    
     for x in self
       len = x.to_s.length
@@ -7,12 +7,11 @@ class Array
     end
     result
   end
-  def injection
-    hash_val = self.hash
-    keys = hash_val.keys
-    output = {}
-    output['odd'] = keys.select {|x| x.odd?}.inject([]) {|cum, i| cum << hash_val[i] }
-    output['even'] = keys.select {|x| x.even?}.inject([]) {|cum, i| cum << hash_val[i] }
-    output    
+  def injection    
+    get_hash.inject({ :odd => [], :even => []}) do |buffer, (k, v)|      
+      buffer[:odd] << v if k.odd?
+      buffer[:even] << v if k.even?
+      buffer
+    end   
   end
 end

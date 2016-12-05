@@ -1,4 +1,3 @@
 require_relative '../lib/task.rb'
 
-task = Task.new
-p task.count("@ HEllo World 9 !!!")
+p "@ HEllo World 9 !!!".count

@@ -1,4 +1,3 @@
-require_relative '../lib/task.rb'
+require_relative '../lib/fixnum.rb'
 
-task = Task.new
-puts task.find_prime 50
+50.prime_numbers {|x| print(x.to_s + ",") }  

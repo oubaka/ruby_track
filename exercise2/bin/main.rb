@@ -1,5 +1,6 @@
 # Replace
-require_relative '../lib/task.rb'
+require_relative '../lib/string.rb'
 
-task = Task.new
-task.run
+puts 'Enter any text of your choice: '
+text = gets.chomp
+puts text.replace

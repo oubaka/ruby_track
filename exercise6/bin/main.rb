@@ -1,4 +1,4 @@
-require_relative '../lib/vehicle.rb'
+require_relative '../lib/bike.rb'
 
 # Vehicle, Bike inheritance
 bike = Bike.new('Suzuki', 5000, 'Samuel Jones')

@@ -1,4 +1,3 @@
-require_relative '../lib/task.rb'
+require_relative '../lib/fixnum.rb'
 
-task = Task.new
-puts task.factorial 5
+puts 5.factorial

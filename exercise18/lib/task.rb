@@ -6,10 +6,15 @@ class Task
     match ? match.captures : []
   end
 
+  def is_valid?(parts)
+    return false if parts.size != 3    
+    parts[0].to_i <= 23 && parts[1].to_i <= 59 && parts[2].to_i <= 59 
+  end
+
   def sum_time(t1, t2)
     c1 = split_time(t1)
     c2 = split_time(t2)
-    return "unknown time format" if c1.size != 3 || c2.size != 3
+    return "invalid time format" if !is_valid?(c1) || !is_valid?(c2)
     max = [24, 60, 60]
     result = []
     carry = 0
@@ -27,6 +32,9 @@ class Task
     return last if args.length < 2
     args[1..args.length].each do |time|
       sum = sum_time(last, time)
+      if (!sum.is_a? [].class)
+        return sum
+      end
       last = sum[1]
       days += sum[0]
     end

@@ -1,6 +1,6 @@
-class Task
+class Fibonacci
 
-  def fib(max)
+  def get(max)
     n1, n2 = 0, 1  
     while n1 <= max
       yield n1

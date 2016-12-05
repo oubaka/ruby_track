@@ -13,8 +13,7 @@ class Name
   end
 
   def lastname=(val)   
-    raise ArgumentError, "Firstname can not be empty", caller if val.empty?
-    raise ArgumentError, "Lastname must start with a capital letter", caller if not val =~ /^[A-Z]\w+$/ 
+    raise ArgumentError, "Firstname can not be empty", caller if val.empty?    
     @lastname = val
   end
 

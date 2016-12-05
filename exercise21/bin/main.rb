@@ -5,3 +5,6 @@ puts name
 
 name.firstname = "John"
 puts name
+
+name = Name.new("", "john")
+puts name

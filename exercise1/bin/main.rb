@@ -1,5 +1,5 @@
 # Occurrence
-require_relative '../lib/task.rb'
+require_relative '../lib/string.rb'
 
-task = Task.new
-task.run
+mystring = 'reverberation101'
+puts mystring.hash_count

@@ -6,10 +6,15 @@ class Task
     match ? match.captures : []
   end
 
+  def is_valid?(parts)
+    return false if parts.size != 3    
+    parts[0].to_i <= 23 && parts[1].to_i <= 59 && parts[2].to_i <= 59 
+  end
+
   def sum_time(t1, t2)
     c1 = split_time(t1)
     c2 = split_time(t2)
-    return "unknown time format" if c1.size != 3 || c2.size != 3
+    return "invalid time format" if !is_valid?(c1) || !is_valid?(c2)    
     max = [24, 60, 60]
     result = []
     carry = 0

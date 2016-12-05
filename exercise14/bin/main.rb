@@ -1,4 +1,3 @@
-require_relative '../lib/task.rb'
+require_relative '../lib/string.rb'
 
-task = Task.new
-task.run
+puts "An apple a     day keeps    the doctor away".reverse

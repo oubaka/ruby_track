@@ -1,11 +1,9 @@
-require_relative '../lib/task.rb'
-
-task = Task.new
+require_relative '../lib/fixnum.rb'
 
 begin
-  puts task.factorial(-3)
+  puts (-3).factorial
 rescue => exception
   puts exception
 end
 
-puts task.factorial(-3)
+puts (-3).factorial
