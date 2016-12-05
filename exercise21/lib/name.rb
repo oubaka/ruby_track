@@ -1,3 +1,5 @@
+require_relative './name_error.rb'
+
 class Name
   attr :firstname, :lastname
 
@@ -7,13 +9,13 @@ class Name
   end 
 
   def firstname=(val)    
-    raise ArgumentError, "Firstname can not be empty", caller if val.empty?
-    raise ArgumentError, "Firstname must start with a capital letter", caller if not val =~ /^[A-Z]\w+$/
+    raise NameError, "Firstname can not be empty", caller if val.empty?
+    raise NameError, "Firstname must start with a capital letter", caller if not val =~ /^[A-Z]\w+$/
     @firstname = val
   end
 
   def lastname=(val)   
-    raise ArgumentError, "Firstname can not be empty", caller if val.empty?    
+    raise NameError, "Firstname can not be empty", caller if val.empty?    
     @lastname = val
   end
 
