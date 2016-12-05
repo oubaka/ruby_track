@@ -1,9 +1,4 @@
-require 'prime'
+require_relative '../lib/task.rb'
 
-def find_prime(n)
-  result = []
-  (1..n).step {|x| result << x if Prime.prime? x}
-  result
-end
-
-puts find_prime(50)
+task = Task.new
+puts task.find_prime 50

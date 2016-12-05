@@ -1,10 +1,5 @@
 # Occurrence
-mystring = 'reverberation'
-count_hash = {}
+require_relative '../lib/task.rb'
 
-mystring.each_char do |letter|
-  count_hash[letter] = 0 if not count_hash[letter]
-  count_hash[letter] += 1
-end
-
-p count_hash
+task = Task.new
+task.run

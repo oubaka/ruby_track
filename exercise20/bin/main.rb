@@ -1,12 +1,11 @@
-def factorial(n)
-  raise ArgumentError, "Negative arg supplied", caller if n < 0
-  (n.downto 1).inject(:*)
-end
+require_relative '../lib/task.rb'
+
+task = Task.new
 
 begin
-  puts factorial(-3)
+  puts task.factorial(-3)
 rescue => exception
   puts exception
 end
 
-puts factorial(-3)
+puts task.factorial(-3)

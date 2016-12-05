@@ -1,3 +1,4 @@
-string = "An apple a day keeps the doctor away"
+require_relative '../lib/task.rb'
 
-p string.split.reverse.join(" ")
+task = Task.new
+task.run

@@ -1,5 +1,4 @@
-def factorial(n)
-  (n.downto 1).inject(:*)
-end
+require_relative '../lib/task.rb'
 
-puts factorial 5
+task = Task.new
+puts task.factorial 5

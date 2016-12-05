@@ -1,4 +1,5 @@
 class Array  
+  
   def hash
     result = Hash.new {|h,k| h[k] = [] }    
     for x in self
@@ -7,4 +8,5 @@ class Array
     end
     result
   end
+
 end

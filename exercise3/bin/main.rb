@@ -1,10 +1,5 @@
-# Fibonacci
-def fib(max)
-  n1, n2 = 0, 1  
-  while n1 <= max
-    yield n1
-    n1, n2 = n2, n1 + n2  
-  end 
-end
+require_relative '../lib/task.rb'
 
-fib(1000) {|x| print "#{x}," }
+# Fibonacci
+task = Task.new
+task.fib(1000) {|x| print "#{x}," }
