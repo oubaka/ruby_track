@@ -1,9 +1,7 @@
 class Array
 
   def power(val)
-    map do |x, i|
-      x**val
-    end
+    map {|x| x**val }    
   end
 
 end

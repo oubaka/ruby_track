@@ -1,7 +1,7 @@
 class String
 
   def replace
-    self.gsub(/[aeiou]/, '*')
+    gsub(/[aeiou]/, '*')
   end
 
 end
