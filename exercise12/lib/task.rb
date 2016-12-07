@@ -8,20 +8,16 @@ class String
     }
     result = Hash.new(0)
     each_char do |c|
-      found = false
-      if regex[:upcase].include? c
-        result[:upcase] += 1 
-        found = true
-      end
-      if regex[:downcase].include? c
+      case c
+      when regex[:upcase] 
+        result[:upcase] += 1
+      when regex[:downcase]
         result[:downcase] += 1 
-        found = true
-      end
-      if regex[:digits].include? c
+      when regex[:digits]
         result[:digits] += 1
-        found = true 
+      else
+        result[:special] += 1
       end
-      result[:special] += 1 if not found
     end
     result
   end
