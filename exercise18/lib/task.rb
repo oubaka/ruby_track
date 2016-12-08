@@ -7,14 +7,14 @@ class Task
   end
 
   def is_valid?(parts)
-    return false if parts.size != 3    
+    return false unless parts.size == 3    
     parts[0].to_i <= 23 && parts[1].to_i <= 59 && parts[2].to_i <= 59 
   end
 
   def sum_time(t1, t2)
     c1 = split_time(t1)
     c2 = split_time(t2)
-    return "invalid time format" if !is_valid?(c1) || !is_valid?(c2)
+    return "invalid time format" unless is_valid?(c1) && is_valid?(c2)
     max = [24, 60, 60]
     result = []
     carry = 0
@@ -29,12 +29,10 @@ class Task
   def sum_time_multi(*args)
     days = 0
     last = args[0]
-    return last if args.length < 2
+    return last unless args.length > 1
     args[1..args.length].each do |time|
       sum = sum_time(last, time)
-      if (!sum.is_a? [].class)
-        return sum
-      end
+      return sum unless sum.is_a? Array      
       last = sum[1]
       days += sum[0]
     end
